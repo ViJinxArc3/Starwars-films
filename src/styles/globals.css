@@ -1,0 +1,296 @@
+/* https://images.pexels.com/photos/9945373/pexels-photo-9945373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url('https://images.pexels.com/photos/9945373/pexels-photo-9945373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: #DADADB;
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+/* Navbar */
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+}
+
+.nav-container .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.nav-shadow {
+  box-shadow: 10px 0px 70px 4px rgb(105, 210, 117);
+
+}
+.character-list {
+  display: flex;
+  text-align: center;
+  align-items: center; 
+  gap: 10px; 
+  padding: 30px;
+}
+
+.character-item {
+  width: 100px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative; 
+
+}
+
+.character-item img {
+  width: 100%;
+  height: auto;
+}
+
+.character-item p {
+  opacity: 0;
+  font-size: 10px;
+  color: #feda4aaf;
+  position: relative;
+  bottom: 0px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  transition: opacity 0.3s ease;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.character-item:hover p {
+  opacity: 1;
+}
+
+.character-item:hover {
+  transform: scale(1.2);
+}
+ 
+
+
+
+
+@media screen and (max-width: 720px){
+  .character-item{
+   display: none;
+  }
+}
+  
+
+
+
+
+/* Intro-Crawl */
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 100%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 10px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 50%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 300px;
+  color: #7afe4a;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+.crawl-button {
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #feda4a;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.crawl-button:hover {
+background-color: #feda4a;
+transform: scale(1.05);
+box-shadow:  0px 0px 7px #feda4a;
+cursor: pointer;
+}
+
+.crawl-button.loading {
+  background-color: #ccc; /* Change the color when loading */
+  cursor: not-allowed;
+}
+
+
+/* Movie Page */
+
+.film-list {
+  list-style: none;
+  padding: 0;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.film-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+  font-size: 50px;
+  color:#feda4a;
+}
+
+.film-item {
+  float: left;
+  margin: 50px;
+}
+
+.film-image {
+  width: 350px;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.img-content {
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.img-content:hover {
+  opacity: 1;
+  
+}
+
+.img-content h1 {
+  font-size: 30px;
+  color: #feda4a;
+}
+
+
+
+.film-details {
+  flex: 1;
+  margin-left: 20px;
+  color: #1e1e1e;
+  background-color: #ffffff86;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.film-details p {
+  font-size: 20px;
+}
+
+@media (max-width: 650px) {
+  .film-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .film-image img {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .film-details {
+    flex: none; 
+    margin-left: 0;
+    margin: 10px;
+  }
+}
+
+.home-btn {
+  font-size: 20px;
+  margin: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #feda4a;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.home-btn:hover {
+  background-color: #feda4a;
+  transform: scale(1.02);
+  box-shadow:  0px 0px 5px #feda4a;
+  cursor: pointer;
+  }
